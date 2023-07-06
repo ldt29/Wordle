@@ -11,7 +11,7 @@ use tui::{
     widgets::{Block, Borders, Paragraph, Widget},
     Frame, Terminal, 
 };
-use std::{io, time::Duration, cmp::min};
+use std::{io, time::Duration};
 use clap::Parser;
 use std::{collections::{HashMap, HashSet}};
 
@@ -50,7 +50,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 pub struct App {
     guess_words: Vec<String>,
-    word_state: Vec<Vec<u8>>,
+    word_states: Vec<Vec<u8>>,
     message: String,
     alphabet_state: Vec<u8>,
 }
@@ -58,14 +58,14 @@ impl App {
     fn new() -> App {
         App { 
             guess_words: (Vec::new()), 
-            word_state: (Vec::new()),
+            word_states: (Vec::new()),
             message: ("Welcome to Wordle!\nPlease input word:".to_string()),
             alphabet_state: (vec!['X' as u8;26]),
         }
     }
 }
 
-fn ui<B: Backend>(f: &mut Frame<B>, app: &App) {
+fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     // area
     let chunks = Layout::default() // default
         .constraints([Constraint::Length(6), Constraint::Length(8), Constraint::Min(5)].as_ref()) // 按照 3 行 和 最小 3 行的规则分割区域
@@ -86,11 +86,15 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &App) {
     let mut input_text = Vec::new();
     for index in 0..app.guess_words.len() {
         let word_ascii = app.guess_words[index].clone().into_bytes();
-        let word_char: Vec<char> = word_ascii.iter().map(|x| *x as char).collect();
-        let word_len = min(5, word_char.len());
+        let mut word_char: Vec<char> = word_ascii.iter().map(|x| *x as char).collect();
+        while word_char.len() < 5 {
+            word_char.push('-');
+            app.word_states[index].push('X' as u8);
+        }
+
         let mut word_span = Vec::new();
-        for letter in 0..word_len {
-            match app.word_state[index][letter] {
+        for letter in 0..5 {
+            match app.word_states[index][letter] {
                 71 => word_span.push(Span::styled(word_char[letter].to_string(), 
                     Style::default().fg(Color::Green).add_modifier(Modifier::BOLD))),
                 89 => word_span.push(Span::styled(word_char[letter].to_string(), 
@@ -153,7 +157,7 @@ fn main_logic<B: Backend>(terminal: &mut Terminal<B>) -> Result<(), Box<dyn std:
     let mut server = Server::new(&cli);
     server.word_list_process(&cli)?;
     let mut app =App::new();
-    terminal.draw(|f| ui(f, &app))?;
+    terminal.draw(|f| ui(f, &mut app))?;
     loop {
         // process other logic
         server.init_secret_word(&cli, terminal, &mut app)?;
@@ -178,8 +182,12 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
     app.message += (player.total_rounds + 1).to_string().as_str();
     app.message += "\nPlease input word:";
     app.guess_words.clear();
-    app.word_state.clear();
+    app.word_states.clear();
+    app.guess_words.push(String::new());
+    app.word_states.push(Vec::new());
     terminal.draw(|f| ui(f, app))?;
+    app.word_states.pop();
+    app.guess_words.pop();
 
     let mut guess_count = 0;
     let mut word_states: Vec<Vec<u8>> = Vec::new();
@@ -213,13 +221,16 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
                         return Err("Force Quit.".into());
                     }
                     KeyCode::Char(ch) => {
-                        guess_word.push(ch);
-                        word_state.push(88);
-                        app.guess_words.push(guess_word.clone());
-                        app.word_state.push(word_state.clone());
-                        terminal.draw(|f| ui(f, app))?;
-                        app.guess_words.pop();
-                        app.word_state.pop();
+                        if guess_word.len() < 5 {
+                            guess_word.push(ch);
+                            word_state.push(88);
+                            app.guess_words.push(guess_word.clone());
+                            app.word_states.push(word_state.clone());
+                            terminal.draw(|f| ui(f, app))?;
+                            app.guess_words.pop();
+                            app.word_states.pop();
+                        }
+                    
                     }
                     KeyCode::Enter => {
                         break;
@@ -228,10 +239,10 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
                         guess_word.pop();
                         word_state.pop();
                         app.guess_words.push(guess_word.clone());
-                        app.word_state.push(word_state.clone());
+                        app.word_states.push(word_state.clone());
                         terminal.draw(|f| ui(f, app))?;
                         app.guess_words.pop();
-                        app.word_state.pop();
+                        app.word_states.pop();
                     }
                     _ => {}
                 }
@@ -257,11 +268,15 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
 
             app.alphabet_state = alphabet_state.clone();
             app.guess_words.push(guess_word.clone());
-            app.word_state.push(word_state.clone());
+            app.guess_words.push(String::new());
+            app.word_states.push(word_state.clone());
+            app.word_states.push(Vec::new());
             app.message = "Word is Wrong\nPlease input word again:".to_string();
             terminal.draw(|f| ui(f, app))?;
+            app.word_states.pop();
+            app.guess_words.pop();
 
-            if is_exit { 
+            if is_exit {
                 // if guess == secret, exit 
                 app.message = "CORRECT with times: ".to_string() + &guess_count.to_string();
                 terminal.draw(|f| ui(f, app))?;
@@ -278,8 +293,13 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
 
         }else {
             app.message = "Word is invalid\nPlease input word again:".to_string();
+            app.word_states.push(Vec::new());
+            app.guess_words.push(String::new());
             terminal.draw(|f| ui(f, app))?;
+
             server.recommend_n_possible_answers(&word_states, &guess_words, &cli.prompt, terminal, app)?;
+            app.word_states.pop();
+            app.guess_words.pop();
         }
     }
     

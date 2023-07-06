@@ -158,9 +158,10 @@ impl Player {
                 app.message += " ";
 
             }
-            app.message += "\nNext game: Y/N ...30 seconds before next round";
-            terminal.draw(|f| ui(f, app))?;
+            
         }
+        app.message += "\nNext game: Y/N ...30 seconds before next round";
+        terminal.draw(|f| ui(f, app))?;
         // write json
 
         // next game ?

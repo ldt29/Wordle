@@ -128,8 +128,13 @@ impl Server {
                     app.alphabet_state = vec!['X' as u8; 26];
                     app.message = "Welcome to Wordle!\nPlease input word for guess:".to_string();
                     app.guess_words.clear();
-                    app.word_state.clear();
+                    app.word_states.clear();
+                    app.guess_words.push(String::new());
+                    app.word_states.push(Vec::new());
                     terminal.draw(|f| ui(f, app))?;
+                    app.word_states.pop();
+                    app.guess_words.pop();
+        
                     // Please input a word which has 5 bytes:
                     // process keyboard input
                     // block
@@ -152,13 +157,15 @@ impl Server {
                                     return Err("Force Quit.".into());
                                 }
                                 KeyCode::Char(ch) => {
-                                    word.push(ch);
-                                    word_state.push(88);
-                                    app.guess_words.push(word.clone());
-                                    app.word_state.push(word_state.clone());
-                                    terminal.draw(|f| ui(f, app))?;
-                                    app.guess_words.pop();
-                                    app.word_state.pop();
+                                    if word.len() < 5 {
+                                        word.push(ch);
+                                        word_state.push(88);
+                                        app.guess_words.push(word.clone());
+                                        app.word_states.push(word_state.clone());
+                                        terminal.draw(|f| ui(f, app))?;
+                                        app.guess_words.pop();
+                                        app.word_states.pop();
+                                    }
                                 }
                                 KeyCode::Enter => {
                                     break;
@@ -167,10 +174,10 @@ impl Server {
                                     word.pop();
                                     word_state.pop();
                                     app.guess_words.push(word.clone());
-                                    app.word_state.push(word_state.clone());
+                                    app.word_states.push(word_state.clone());
                                     terminal.draw(|f| ui(f, app))?;
                                     app.guess_words.pop();
-                                    app.word_state.pop();
+                                    app.word_states.pop();
                                 }
                                 _ => {}
                             }
