@@ -1,0 +1,10 @@
+/home/ldt/code/rust/project/Wordle/target/debug/deps/anstyle-b5441e274f878947.rmeta: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/macros.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/color.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/effect.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/reset.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/style.rs
+
+/home/ldt/code/rust/project/Wordle/target/debug/deps/anstyle-b5441e274f878947.d: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/macros.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/color.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/effect.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/reset.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/style.rs
+
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/lib.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/macros.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/color.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/effect.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/reset.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/anstyle-1.0.1/src/style.rs:

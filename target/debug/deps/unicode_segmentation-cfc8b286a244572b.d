@@ -1,0 +1,9 @@
+/home/ldt/code/rust/project/Wordle/target/debug/deps/unicode_segmentation-cfc8b286a244572b.rmeta: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/grapheme.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/sentence.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/word.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/tables.rs
+
+/home/ldt/code/rust/project/Wordle/target/debug/deps/unicode_segmentation-cfc8b286a244572b.d: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/grapheme.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/sentence.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/word.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/tables.rs
+
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/lib.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/grapheme.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/sentence.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/word.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/unicode-segmentation-1.10.1/src/tables.rs:

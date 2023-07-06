@@ -1,0 +1,11 @@
+/home/ldt/code/rust/project/Wordle/target/debug/deps/console-27cb8778b61aa1c7.rmeta: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/common_term.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/kb.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/term.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/unix_term.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/utils.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/ansi.rs
+
+/home/ldt/code/rust/project/Wordle/target/debug/deps/console-27cb8778b61aa1c7.d: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/common_term.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/kb.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/term.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/unix_term.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/utils.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/ansi.rs
+
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/lib.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/common_term.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/kb.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/term.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/unix_term.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/utils.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/console-0.15.7/src/ansi.rs:

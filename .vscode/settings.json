@@ -1,0 +1,6 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./wordle-ldt20/Cargo.toml",
+        "./wordle-ldt20/Cargo.toml"
+    ]
+}

@@ -1,0 +1,11 @@
+/home/ldt/code/rust/project/Wordle/target/debug/deps/colored-5a714875b367ff9f.rmeta: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/color.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/control.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/style.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/customcolors.rs
+
+/home/ldt/code/rust/project/Wordle/target/debug/deps/libcolored-5a714875b367ff9f.rlib: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/color.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/control.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/style.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/customcolors.rs
+
+/home/ldt/code/rust/project/Wordle/target/debug/deps/colored-5a714875b367ff9f.d: /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/lib.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/color.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/control.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/style.rs /home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/customcolors.rs
+
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/lib.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/color.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/control.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/style.rs:
+/home/ldt/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-2eab394af869c8a2/colored-2.0.3/src/customcolors.rs:

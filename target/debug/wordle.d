@@ -1,0 +1,1 @@
+/home/ldt/code/rust/project/Wordle/target/debug/wordle: /home/ldt/code/rust/project/Wordle/src/builtin_words.rs /home/ldt/code/rust/project/Wordle/src/cli.rs /home/ldt/code/rust/project/Wordle/src/main.rs /home/ldt/code/rust/project/Wordle/src/player.rs /home/ldt/code/rust/project/Wordle/src/server.rs

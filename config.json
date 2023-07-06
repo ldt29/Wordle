@@ -1,0 +1,9 @@
+{
+    "random": true,
+    "difficult": true,
+    "stats": true,
+    "day": 5,
+    "seed": 20230727,
+    "state": "state.json",
+    "prompt": 5
+  }
