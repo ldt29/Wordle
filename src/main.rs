@@ -273,10 +273,11 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
             app.word_states.push(Vec::new());
             app.message = "Word is Wrong\nPlease input word again:".to_string();
             terminal.draw(|f| ui(f, app))?;
-            app.word_states.pop();
-            app.guess_words.pop();
+            
 
             if is_exit {
+                app.word_states.pop();
+                app.guess_words.pop();
                 // if guess == secret, exit 
                 app.message = "CORRECT with times: ".to_string() + &guess_count.to_string();
                 terminal.draw(|f| ui(f, app))?;
@@ -290,6 +291,8 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
             last_word_state = word_state;
 
             server.recommend_n_possible_answers(&word_states, &guess_words, &cli.prompt, terminal, app)?;
+            app.word_states.pop();
+            app.guess_words.pop();
 
         }else {
             app.message = "Word is invalid\nPlease input word again:".to_string();
@@ -304,7 +307,7 @@ fn play_game<B: Backend>(server: &mut Server, player: &mut Player, cli: &Cli, te
     }
     
     // failed!!!
-    app.message = "FAILED ".to_string() + &server.answer;
+    app.message = "FAILED and answer is ".to_string() + &server.answer;
     terminal.draw(|f| ui(f, app))?;
     player.games.push(Game{answer: (server.answer.clone()), guesses: (guess_words)});
     Ok(())
