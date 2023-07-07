@@ -141,7 +141,7 @@ impl Player {
             let z = self.average_times(); 
             app.message += "\nwin rounds: ";
             app.message += x.to_string().as_str();
-            app.message += ", total rounds: ";
+            app.message += ", lose rounds: ";
             app.message += y.to_string().as_str();
             app.message += ", average times: ";
             app.message += z.to_string().as_str();

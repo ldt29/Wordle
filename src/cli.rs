@@ -46,6 +46,32 @@ pub struct Cli {
     pub prompt: Option<i32>,
 }
 
+#[derive(Serialize, Deserialize)]
+struct Config {
+    /// assigned word mode
+    word: Option<String>,
+    /// random mode
+    random: Option<bool>,
+    /// hard mode
+    difficult: Option<bool>,
+    /// statistics for all games
+    stats: Option<bool>,
+    /// begin at nth game
+    day: Option<i32>,
+    /// random seed
+    seed: Option<u64>,
+    /// final word txt
+    final_set: Option<String>,
+    /// acceptable word txt
+    acceptable_set: Option<String>,
+    /// state json
+    state: Option<String>,
+    /// config json
+    // config: Option<String>,
+    /// give n prompt word 
+    prompt: Option<i32>,
+}
+
 impl Cli{
     pub fn mix_with_config(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         match  &self.config {
@@ -58,7 +84,7 @@ impl Cli{
                 let mut file = File::open(file_path)?;
                 let mut contents = String::new();
                 file.read_to_string(&mut contents)?;
-                let cli_config: Cli = serde_json::from_str(&contents)?;
+                let cli_config: Config = serde_json::from_str(&contents)?;
    
                 match &self.word {
                     Some(_word) => (),
@@ -70,12 +96,37 @@ impl Cli{
                     },
                 }
                 
-                self.random = self.random || cli_config.random;
-                 // random mode and worde mod can't exist at the same time
+                match &self.random {
+                    true => (),
+                    false => {
+                        match &cli_config.random {
+                            Some(random) => self.random = *random,
+                            None => (),
+                        }
+                    },
+                }
+                // random mode and worde mod can't exist at the same time
                 
-                self.difficult = self.difficult || cli_config.difficult;
+                match &self.difficult {
+                    true => (),
+                    false => {
+                        match &cli_config.difficult {
+                            Some(difficult) => self.difficult = *difficult,
+                            None => (),
+                        }
+                    },
+                }
+
+                match &self.stats {
+                    true => (),
+                    false => {
+                        match &cli_config.stats {
+                            Some(stats) => self.stats = *stats,
+                            None => (),
+                        }
+                    },
+                }
                 
-                self.stats = self.stats || cli_config.random;
 
                 match &self.day {
                     Some(_day) => (),
@@ -173,7 +224,14 @@ impl Cli{
                 return Err("Random mode and word mode can't exist at the same time!".into());
             }
         } 
-
+        match &self.day {
+            Some(day) => {
+                if *day < 1 {
+                    return Err("day less than 1".into());
+                }
+            },
+            None => (),
+        }
         Ok(())
     } 
     
